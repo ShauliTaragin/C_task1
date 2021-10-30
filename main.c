@@ -1,6 +1,3 @@
-//
-// Created by Gal on 30/10/2021.
-//
 #include <stdio.h>
 #include "NumClass.h"
 
