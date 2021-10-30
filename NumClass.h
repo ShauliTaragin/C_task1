@@ -1,7 +1,3 @@
-//
-// Created by Gal on 29/10/2021.
-//
-
 #ifndef UNTITLED2_NUMCLASS_H
 #define UNTITLED2_NUMCLASS_H
 
