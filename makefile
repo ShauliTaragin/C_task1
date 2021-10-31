@@ -7,6 +7,8 @@ Objects_loop= advancedClassificationLoop.o basicClassification.o
 Objects_rec= advancedClassificationRecursion.o basicClassification.o
 Objects_main= main.o
 
+
+all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
 //libraries 
 libclassloops.a: $(Objects_loop)
 	$(AR) -rcs libclassloops.a $(Objects_loop)
@@ -43,3 +45,9 @@ basicClassification.o: basicClassification.c
 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c
 	$(CC) $(Flags) -c advancedClassificationRecursion.c $(Maths)
+
+.PHONY: clean all
+
+clean: 
+	rm -f *.o *.a *.so mains maindloop maindrec
+

@@ -7,7 +7,7 @@ int Rec(int k, int t) {
     return Rec(k / 10, t);
 }
 
-int isPalindrome1(int k) {
+int isPalindrome(int k) {
     int temp = Rec(k, 0);
     return (temp == k);
 }
@@ -16,7 +16,7 @@ int Rec2(int k){
     if (k > 0)return (int) (pow(k % 10, 3) + Rec2(k / 10));
     return 0;
 }
-int isArmstrong1(int k) {
+int isArmstrong(int k) {
     int temp = k;
     return (temp == Rec2(k));
 }
