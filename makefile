@@ -1,39 +1,39 @@
-//shortcuts 
-CC= gcc
-AR= ar
-Maths= -lm
-Flags= -Wall -g  //shows warnings
+
+CC=gcc
+AR=ar
+Maths=-lm
+Flags= -Wall -g  
 Objects_loop= advancedClassificationLoop.o basicClassification.o
 Objects_rec= advancedClassificationRecursion.o basicClassification.o
 Objects_main= main.o
 
 
-all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
-//libraries 
+all:libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
+
 libclassloops.a: $(Objects_loop)
 	$(AR) -rcs libclassloops.a $(Objects_loop)
 
-libclassrec.a: $(Objects_rec)
-	$(AR) -rcs libclassloops.a $(Objects_rec) 
+libclassrec.a: $(Objects_rec) 
+	$(AR) -rcs libclassrec.a $(Objects_rec)
 
 libclassrec.so: $(Objects_rec)
-	$(CC) -shared -o libclassrec.so $(Objects_rec) 
+	$(CC) -shared -o libclassrec.so $(Objects_rec)
 
 libclassloops.so: $(Objects_loop)
-	$(CC) -shared -o libclassloops.so $(Objects_loop) 
+	$(CC) -shared -o libclassloops.so $(Objects_loop)
 
-//all our mains 
+
 mains: $(Objects_main) libclassrec.a
-	$(CC) $(Flags) -o mains $(Objects_main) libclassrec.a
+	$(CC) $(Flags) -o mains $(Objects_main) libclassrec.a $(Maths)
 
 maindloop: $(Objects_main)
-	$(CC) $(Flags) -o maindloop $(Objects_main) ./libclassloops.so
+	$(CC) $(Flags) -o maindloop $(Objects_main) ./libclassloops.so $(Maths)
 
 maindrec: $(Objects_main)
-	$(CC) $(Flags) -o maindrec $(Objects_main) ./libclassrec.so
+	$(CC) $(Flags) -o maindrec $(Objects_main) ./libclassrec.so $(Maths)
 
 
-//functions
+
 main.o: main.c NumClass.h
 	$(CC) $(Flags) -c main.c $(Maths)
 
@@ -48,6 +48,5 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c
 
 .PHONY: clean all
 
-clean: 
+clean:
 	rm -f *.o *.a *.so mains maindloop maindrec
-
