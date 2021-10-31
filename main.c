@@ -3,10 +3,9 @@
 
 int main() {
     int num1, num2;
-    printf("Please enter two numbers :\n");
+    printf("Please enter two non negative numbers : ");
     scanf("%d %d", &num1, &num2);
-/*    if (scanf("%d%*[ ]%d", &num1, &num2) != 2)
-        ;*/
+
     printf("The Prime numbers are: ");
     for (int i = num1; i <= num2; ++i) {
         if (isPrime(i)) {

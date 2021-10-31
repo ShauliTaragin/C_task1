@@ -1,38 +1,33 @@
-#include "NumClass.h"
-#include <math.h>
 #include <stdio.h>
-int isArmstrong(int a){
-    int num;int b=a;int length=0; int digit;
-    while(b!=0){
-        length++;
-        b/=10;
+#include <math.h>
+
+int Size(int k) {
+    int counter = 0;
+    while (k > 0) {
+        k = (k - (k % 10)) / 10;
+        counter++;
     }
-    b=a;
-    while(b!=0){
-        digit=b%10;
-        num+=(int)pow(digit,length);
-        b/=10;
-    }
-    if(a==num){
-        return 1;
-        }
-    else{ return 0;}
+    return counter;
 }
-int isPalindrome(int a){
-    int divider=0;
-    int b=a;
-    while(b!=0){
-        divider++;
-        b/=10;
-    }
-    if(divider==1)return 1;
-    b=a;
-    divider-=1;//we need one less zero in order to get the largest digit
-    while(divider>1){
-        if(b%10!=b/(int)pow(10,divider))return 0;
-        b=b%(int)pow(10,divider);
-        b=b/10;
-        divider-=2;
+
+int Pos(int k, int p) {
+    return ((int) (k / pow(10, p)) % 10);
+}
+
+int isPalindrome(int k) {
+    for (int i = 0, j = Size(k) - 1; i < j; ++i, j--) {
+        if (Pos(k, i) != Pos(k, j)) return 0;
     }
     return 1;
-}  
+}
+
+int isArmstrong(int k) {
+    int temp = k;
+    int sum = 0;
+    for (int i = 0; i< Size(k); i++)
+        sum += (int)pow(Pos(k,i),(Size(k)));
+    return (sum == temp);
+}
+
+
+

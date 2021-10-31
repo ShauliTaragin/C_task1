@@ -1,25 +1,32 @@
-#include "NumClass.h"
-long factorial(int);//declaring the helping function
-int isPrime(int a){
-    if(a<2) {return 0;}
-    for(int i=2 ;i<a;i++){
-        if(a%i==0)return 0;
+#include <stdio.h>
+#include <math.h>
+int isPrime(int k){
+    if(k <= 1)return 0;
+    else{
+        for (int i = 2; i <= sqrt(k); i++){
+            if(k%i==0)return 0;
+        }
     }
     return 1;
 }
-int isStrong(int a){
-    int num;
-    int b=a;
-    while(a!=0){
-        num+=factorial(a%10);
-        a/=10;
+
+int Factorial(int k){
+    int sum = 1;
+    for (int i = k; 0<i; i--)
+    {
+        sum = sum * i;
     }
-    if(b==num){
-        return 1;
-        }
-    else{ return 0;}
+    return sum;
 }
-long factorial(int a){
-    if(a==0) return 1;
-    return (a*factorial(a-1));
+
+int isStrong(int k){
+    int temp = k;
+    int sum = 0;
+    while (k>0){
+        sum += Factorial(k%10);
+        k = (k -(k%10))/10;
+    }
+    if(sum == temp)return 1;
+    return 0;
 }
+
