@@ -40,8 +40,6 @@ maindloop: $(Objects_main)
 maindrec: $(Objects_main)
 	$(CC) $(Flags) -o maindrec $(Objects_main) ./libclassrec.so $(Maths)
 
-
-//s
 main.o: main.c NumClass.h
 	$(CC) $(Flags) -c main.c $(Maths)
 
