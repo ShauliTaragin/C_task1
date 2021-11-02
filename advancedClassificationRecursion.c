@@ -18,5 +18,8 @@ int Rec2(int k){
 }
 int isArmstrong(int k) {
     int temp = k;
-    return (temp == Rec2(k));
+    if(temp == Rec2(k)){
+        return 1;
+    }
+    return 0;
 }
