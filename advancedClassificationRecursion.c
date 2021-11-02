@@ -17,6 +17,7 @@ int Rec2(int k){
     return 0;
 }
 int isArmstrong(int k) {
+    if(k<10 && k>0)return 1;
     int temp = k;
     if(temp == Rec2(k)){
         return 1;
