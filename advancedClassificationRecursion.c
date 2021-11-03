@@ -12,12 +12,9 @@ int isPalindrome(int k) {
     return (temp == k);
 }
 int Size(int k) {
-    int counter = 0;
-    while (k > 0) {
-        k = (k - (k % 10)) / 10;
-        counter++;
-    }
-    return counter;
+    if(k == 0) return 0;
+
+    return (Size(k/10)+1);
 }
 
 int Rec2(int k){
