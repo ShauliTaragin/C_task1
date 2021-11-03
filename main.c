@@ -6,7 +6,7 @@ int main() {
     printf("Please enter two non negative numbers : ");
     scanf("%d %d", &num1, &num2);
 
-    printf("\nThe Armstrong numbers are: ");
+    printf("The Armstrong numbers are: ");
     for (int i = num1; i <= num2; ++i) {
         if (isArmstrong(i)) {
             printf("%d ", i);
@@ -18,7 +18,7 @@ int main() {
             printf("%d ", i);
         }
     }
-    printf("The Prime numbers are: ");
+    printf("\nThe Prime numbers are: ");
     for (int i = num1; i <= num2; ++i) {
         if (isPrime(i)) {
             printf("%d ", i);

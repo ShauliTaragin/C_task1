@@ -25,20 +25,20 @@ libclassrec.a: $(Objects_rec)
 	$(AR) -rcs libclassrec.a $(Objects_rec)
 
 libclassrec.so: $(Objects_rec)
-	$(CC) -shared -o libclassrec.so $(Objects_rec)
+	$(CC) -shared -o libclassrec.so $(Objects_rec) $(Maths)
 
 libclassloops.so: $(Objects_loop)
-	$(CC) -shared -o libclassloops.so $(Objects_loop)
+	$(CC) -shared -o libclassloops.so $(Objects_loop) $(Maths)
 
 
 mains: $(Objects_main) libclassrec.a
 	$(CC) $(Flags) -o mains $(Objects_main) libclassrec.a $(Maths)
 
-maindloop: $(Objects_main)
-	$(CC) $(Flags) -o maindloop $(Objects_main) ./libclassloops.so $(Maths)
+maindloop: $(Objects_main) loopd
+	$(CC) $(Flags) -o maindloop $(Objects_main) $(Maths) ./libclassloops.so
 
-maindrec: $(Objects_main)
-	$(CC) $(Flags) -o maindrec $(Objects_main) ./libclassrec.so $(Maths)
+maindrec: $(Objects_main) recursived
+	$(CC) $(Flags) -o maindrec $(Objects_main)  $(Maths) ./libclassrec.so
 
 main.o: main.c NumClass.h
 	$(CC) $(Flags) -c main.c $(Maths)
