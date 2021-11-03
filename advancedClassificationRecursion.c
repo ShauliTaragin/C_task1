@@ -17,14 +17,14 @@ int Size(int k) {
     return (Size(k/10)+1);
 }
 
-int Rec2(int k){
-    if (k > 0)return (int) (pow(k % 10, Size(k)) + Rec2(k / 10));
+int Rec2(int k , int s){
+    if (k > 0)return (int) (pow(k % 10, s) + Rec2((k / 10),s));
     return 0;
 }
 int isArmstrong(int k) {
     if(k<10 && k>0)return 1;
     int temp = k;
-    if(temp == Rec2(k)){
+    if(temp == Rec2(k,Size(k))){
         return 1;
     }
     return 0;
