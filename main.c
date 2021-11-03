@@ -3,9 +3,7 @@
 
 int main() {
     int num1, num2;
-    printf("Please enter two non negative numbers:");
     scanf("%d %d", &num1, &num2);
-
     printf("The Armstrong numbers are:");
     for (int i = num1; i <= num2; ++i) {
         if (isArmstrong(i)) {
