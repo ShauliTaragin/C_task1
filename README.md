@@ -5,12 +5,8 @@
   <summary>Content</summary>
   <ol>
     <li><a href="#basicClassification">basicClassification</a></li>
-      <ul>
       <li><a href="#advancedClassificationLoop">advancedClassificationLoop/a></li>
-      </ul>
-      <ul>
       <li><a href="#advancedClassificationRecursion">advancedClassificationRecursion</a></li>
-      </ul>
   </ol>
 </details>
 
