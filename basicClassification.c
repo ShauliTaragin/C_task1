@@ -21,7 +21,7 @@ int Factorial(int k){
 }
 
 int isStrong(int k){
-    if (k==0)return 0;
+    if (k<=0)return 0;
     int temp = k;
     int sum = 0;
     while (k>0){
