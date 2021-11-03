@@ -11,9 +11,17 @@ int isPalindrome(int k) {
     int temp = Rec(k, 0);
     return (temp == k);
 }
+int Size(int k) {
+    int counter = 0;
+    while (k > 0) {
+        k = (k - (k % 10)) / 10;
+        counter++;
+    }
+    return counter;
+}
 
 int Rec2(int k){
-    if (k > 0)return (int) (pow(k % 10, 3) + Rec2(k / 10));
+    if (k > 0)return (int) (pow(k % 10, Size(k)) + Rec2(k / 10));
     return 0;
 }
 int isArmstrong(int k) {
