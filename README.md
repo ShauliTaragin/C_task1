@@ -5,7 +5,7 @@
   <summary>Content</summary>
   <ol>
     <li><a href="#basicClassification">basicClassification</a></li>
-      <li><a href="#advancedClassificationLoop">advancedClassificationLoop/a></li>
+      <li><a href="#advancedClassificationLoop">advancedClassificationLoop</a></li>
       <li><a href="#advancedClassificationRecursion">advancedClassificationRecursion</a></li>
   </ol>
 </details>
