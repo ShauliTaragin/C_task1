@@ -4,7 +4,7 @@
 <details open="open">
   <summary>Content</summary>
   <ol>
-    <li><a href="#basicClassification">basicClassification</a>
+    <li><a href="#basicClassification">basicClassification</a></li>
       <ul>
       <li><a href="#advancedClassificationLoop">advancedClassificationLoop/a></li>
       </ul>
