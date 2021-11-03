@@ -34,10 +34,10 @@ libclassloops.so: $(Objects_loop)
 mains: $(Objects_main) libclassrec.a
 	$(CC) $(Flags) -o mains $(Objects_main) libclassrec.a $(Maths)
 
-maindloop: $(Objects_main) loopd
+maindloop: $(Objects_main) libclassloops.so
 	$(CC) $(Flags) -o maindloop $(Objects_main) $(Maths) ./libclassloops.so
 
-maindrec: $(Objects_main) recursived
+maindrec: $(Objects_main) libclassrec.so
 	$(CC) $(Flags) -o maindrec $(Objects_main)  $(Maths) ./libclassrec.so
 
 main.o: main.c NumClass.h
